@@ -69,7 +69,7 @@ app.set('ipAdress', 'localhost');
 app.listen(
   app.get('port'),
   app.get('ipAdress'),
-  () => console.log(`Production server 🏃 (running) on ${app.get('ipAdress')}:${app.get('port')}'`)
+  () => console.log(`Production server 🏃 (running) on ${app.get('ipAdress')}:${app.get('port')}`)
 );
 
 module.exports = app; // export app just for testing purpose
