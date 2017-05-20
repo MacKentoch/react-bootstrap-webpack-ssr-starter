@@ -1,5 +1,8 @@
 React Bootstrap with server side rendering STARTER
 ==========
+[![npm](https://img.shields.io/npm/l/express.svg?maxAge=2592000)](https://github.com/MacKentoch/react-bootstrap-webpack-starter)
+[![Build Status](https://travis-ci.org/MacKentoch/react-bootstrap-webpack-ssr-starter.svg?branch=master)](https://travis-ci.org/MacKentoch/react-bootstrap-webpack-ssr-starter)
+[![Coverage Status](https://coveralls.io/repos/github/MacKentoch/react-bootstrap-webpack-ssr-starter/badge.svg?branch=master)](https://coveralls.io/github/MacKentoch/react-bootstrap-webpack-ssr-starter?branch=master)
 
 ### ReactJS + Bootstrap starter with server side rendering (and hot reload for front dev)
 
