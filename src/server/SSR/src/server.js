@@ -106,6 +106,14 @@ function serverRender(req, res) {
 }
 
 function renderFullPage(html) {
+  // NOTE:
+  // <section id="root">
+  //   ${html}
+  // </section>
+  // will throw warning related to: https://stackoverflow.com/questions/34060968/react-warning-render
+  //
+  // so write this way to fix: 
+  // <section id="root">${html}</section> 
   const indexHtml = {
     template: `
     <!DOCTYPE html>
@@ -121,9 +129,7 @@ function renderFullPage(html) {
         <link rel="stylesheet" href="/assets/app.styles.css">
       </head>
       <body class="skin-black" style="background-color:#f1f2f7">
-        <section id="root">
-          ${html}
-        </section>
+        <section id="root">${html}</section>
         <script type="text/javascript" src="/assets/app.vendor.bundle.js"></script>
         <script type="text/javascript" src="/assets/app.bundle.js"></script>
       </body>
