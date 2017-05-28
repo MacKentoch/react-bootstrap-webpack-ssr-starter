@@ -1,12 +1,12 @@
 // @flow weak
 
 import React, {
-  Component,
-  PropTypes
+  Component
 }                         from 'react';
+import PropTypes          from 'prop-types';
 import {
   NavigationBar,
-  // BackToTop
+  BackToTop
 }                         from '../../components';
 import navigationModel    from '../../models/navigation.json';
 
@@ -34,10 +34,10 @@ class App extends Component {
         <div className="container-fluid">
           {children}
         </div>
-        {/*<BackToTop
+        <BackToTop
           minScrollY={40}
           scrollTo={'appContainer'}
-        />*/}
+        />
       </div>
     );
   }

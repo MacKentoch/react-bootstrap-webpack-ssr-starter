@@ -4,7 +4,7 @@ React Bootstrap with server side rendering STARTER
 [![Build Status](https://travis-ci.org/MacKentoch/react-bootstrap-webpack-ssr-starter.svg?branch=master)](https://travis-ci.org/MacKentoch/react-bootstrap-webpack-ssr-starter)
 [![Coverage Status](https://coveralls.io/repos/github/MacKentoch/react-bootstrap-webpack-ssr-starter/badge.svg?branch=master)](https://coveralls.io/github/MacKentoch/react-bootstrap-webpack-ssr-starter?branch=master)
 
-### ReactJS + Bootstrap starter with server side rendering (and hot reload for front dev)
+### ReactJS + Bootstrap starter + webpack 2 with server side rendering (and hot reload for front dev)
 
 ## Concept behind
 
@@ -13,7 +13,7 @@ This is a port of existing starter [react-bootstrap-webpack-starter](https://git
 ## Detailed Content
 
 **Front:**
-- React JS (15.4.x - [github :link:](https://github.com/facebook/react))
+- React JS (15.5.x - [github :link:](https://github.com/facebook/react))
 - react-router (3.x- [github :link:](https://github.com/reactjs/react-router))
 - Bootstrap (3.x - [github :link:](https://github.com/twbs/bootstrap))
 - React-Bootstrap ([github :link:](https://github.com/react-bootstrap/react-bootstrap))
@@ -28,7 +28,7 @@ This is a port of existing starter [react-bootstrap-webpack-starter](https://git
 **Tool chain:**
 - babel 6+
 - eslint
-- webpack 1.x
+- webpack 2.x
 - hot reload
 - loaders
   - `js` / `jsx`
@@ -37,7 +37,7 @@ This is a port of existing starter [react-bootstrap-webpack-starter](https://git
   - json
   - images formats
   - svg and fonts formats
-- autoprefixer (css and sass)
+- postcss (postcss-next)
 
 **tests:**
 - Mocha
@@ -83,13 +83,6 @@ npm run test
 
 ```bash
 npm run prod
-```
-
-### serve bundles (for dev or prod bundles)
-IMPORTANT: ensure to run dev or production bundle before
-
-```bash
-npm run serve
 ```
 
 ### serve single page application

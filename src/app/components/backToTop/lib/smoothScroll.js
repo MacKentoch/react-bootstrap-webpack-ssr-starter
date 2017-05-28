@@ -1,3 +1,6 @@
+// @flow weak
+
+import { isBrowserSide }  from '../../../services/universal';
 
 export const smoothScroll = {
   timer: null,
@@ -7,6 +10,10 @@ export const smoothScroll = {
   },
 
   scrollTo(id, callback) {
+    if (isBrowserSide()) {
+      return;
+    }
+
     const settings = {
       duration: 1000,
       easing: {
@@ -18,23 +25,23 @@ export const smoothScroll = {
       }
     };
     let percentage;
-    const node = document.getElementById(id);
-    const nodeTop = node.offsetTop;
-    const nodeHeight = node.offsetHeight;
-    const body = document.body;
-    const html = document.documentElement;
-    const height = Math.max(
+    const node        = document.getElementById(id);
+    const nodeTop     = node.offsetTop;
+    const nodeHeight  = node.offsetHeight;
+    const body        = document.body;
+    const html        = document.documentElement;
+    const height      = Math.max(
 			body.scrollHeight,
 			body.offsetHeight,
 			html.clientHeight,
 			html.scrollHeight,
 			html.offsetHeight
 		);
-    const windowHeight = window.innerHeight;
-    const offset = window.pageYOffset;
-    const delta = nodeTop - offset;
+    const windowHeight  = window.innerHeight;
+    const offset        = window.pageYOffset;
+    const delta         = nodeTop - offset;
     const bottomScrollableY = height - windowHeight;
-    const targetY = (bottomScrollableY < delta) ?
+    const targetY           = (bottomScrollableY < delta) ?
       bottomScrollableY - (height - nodeTop - nodeHeight + offset):
       delta;
 

@@ -6,20 +6,25 @@ const express   = require('express');
 const path      = require('path');
 
 const app       = express();
-const DOCS_PATH = '../../../docs';
+const DOCS_PATH = '../../docs/';
+const PORT      = 8082;
+const IP_ADRESS = 'localhost';
+
+app.set('port', PORT);
+app.set('ipAdress', IP_ADRESS);
 
 app.use(express.static(path.join(__dirname, DOCS_PATH)));
 
 app.get('/', (req, res) => res.sendFile(path.join(__dirname, DOCS_PATH, 'index.html')));
 
-app.set('port', 8082);
-app.set('ipAdress', 'localhost');
-
-// $FlowIgnore
 /* eslint-disable no-console */
 app.listen(
-  app.get('port'),
-  app.get('ipAdress'),
-  () => console.log(`Production server 🏃 (running) on ${app.get('ipAdress')}:${app.get('port')}`)
+  PORT,
+  IP_ADRESS,
+  () => console.log(`
+    =====================================================
+    -> Server (SPA) 🏃 (running) on ${IP_ADRESS}:${PORT}
+    =====================================================
+  `)
 );
 /* eslint-enable no-console */

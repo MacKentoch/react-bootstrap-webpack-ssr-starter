@@ -20,8 +20,13 @@ import {
 }                         from 'react-router';
 
 const DOCS_PATH = '../../../../docs';
+const PORT      = 8083;
+const IP_ADRESS = 'localhost';
 
-const app = express();
+const app       = express();
+
+app.set('port', PORT);
+app.set('ipAdress', IP_ADRESS);
 
 app.use(helmet()); // ensure app security
 app.use(bodyParser.json());
@@ -60,16 +65,16 @@ app.use(
 );
 /* eslint-enable no-unused-vars */
 /* ======================================================= */
-
-app.set('port', 8083);
-app.set('ipAdress', 'localhost');
-
 // $FlowIgnore
 // launch server:
 app.listen(
-  app.get('port'),
-  app.get('ipAdress'),
-  () => console.log(`Production server 🏃 (running) on ${app.get('ipAdress')}:${app.get('port')}`)
+  PORT,
+  IP_ADRESS,
+  () => console.log(`
+    =====================================================
+    -> Server (SSR) 🏃 (running) on ${IP_ADRESS}:${PORT}
+    =====================================================
+  `)
 );
 
 module.exports = app; // export app just for testing purpose

@@ -1,6 +1,7 @@
 // @flow weak
 
-import React, {PropTypes} from 'react';
+import React              from 'react';
+import PropTypes          from 'prop-types';
 
 const UpIcon = ({
   color
@@ -23,6 +24,6 @@ UpIcon.propTypes = {
 
 UpIcon.defaultProps = {
   color: '#F1F1F1'
-}
+};
 
 export default UpIcon;
