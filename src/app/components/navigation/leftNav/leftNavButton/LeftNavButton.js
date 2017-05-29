@@ -8,10 +8,10 @@ import { Link }       from 'react-router';
 
 class LeftNavButton extends PureComponent {
   static propTypes = {
-    link: PropTypes.string,
-    label: PropTypes.string,
+    link:     PropTypes.string,
+    label:    PropTypes.string,
     viewName: PropTypes.string,
-    onClick: PropTypes.func
+    onClick:  PropTypes.func
   };
 
   render() {
