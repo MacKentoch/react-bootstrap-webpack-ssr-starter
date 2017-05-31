@@ -4,7 +4,7 @@ React Bootstrap with server side rendering STARTER
 [![Build Status](https://travis-ci.org/MacKentoch/react-bootstrap-webpack-ssr-starter.svg?branch=master)](https://travis-ci.org/MacKentoch/react-bootstrap-webpack-ssr-starter)
 [![Coverage Status](https://coveralls.io/repos/github/MacKentoch/react-bootstrap-webpack-ssr-starter/badge.svg?branch=master)](https://coveralls.io/github/MacKentoch/react-bootstrap-webpack-ssr-starter?branch=master)
 
-### ReactJS + Bootstrap starter + webpack 2 with server side rendering (and hot reload for front dev)
+### ReactJS + Bootstrap starter + react router v4 + webpack 2 with server side rendering (and hot reload for front dev)
 
 ## Concept behind
 
@@ -14,14 +14,14 @@ This is a port of existing starter [react-bootstrap-webpack-starter](https://git
 
 **Front:**
 - React JS (15.5.x - [github :link:](https://github.com/facebook/react))
-- react-router (3.x- [github :link:](https://github.com/reactjs/react-router))
+- react-router (v4- [github :link:](https://github.com/reactjs/react-router))
 - Bootstrap (3.x - [github :link:](https://github.com/twbs/bootstrap))
 - React-Bootstrap ([github :link:](https://github.com/react-bootstrap/react-bootstrap))
 - font-awesome ([github :link:](https://github.com/FortAwesome/Font-Awesome))
 - animate.css ([github :link:](https://github.com/daneden/animate.css))
 - classnames ([github :link:](https://github.com/JedWatson/classnames))
 - react-motion ([github :link:](https://github.com/chenglou/react-motion))
-- Webpack ([github :link:](https://github.com/webpack/webpack))
+- Webpack 2.x ([github :link:](https://github.com/webpack/webpack))
 - babel 6+ ([github :link:](https://github.com/babel/babel))
 - axios ([github :link:](https://github.com/mzabriskie/axios) *Why: simple, complete, isomorphic ...*)
 

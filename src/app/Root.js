@@ -2,25 +2,22 @@
 
 import React, {
   Component
-}                 from 'react';
-import PropTypes  from 'prop-types';
+}                               from 'react';
+// import PropTypes  from 'prop-types';
 
 import {
-  Router,
-  // hashHistory
-  browserHistory
-}               from 'react-router';
+  BrowserRouter as Router
+}                               from 'react-router-dom';
+import { createBrowserHistory } from 'history';
+import App                      from './containers/app/App';
+
+const browserHistory = createBrowserHistory();
 
 class Root extends Component {
-  static propTypes = {
-    routes: PropTypes.any
-  };
-
   render() {
-    const { routes } = this.props;
     return (
       <Router history={browserHistory}>
-        {routes()}
+        <App />
       </Router>
     );
   }

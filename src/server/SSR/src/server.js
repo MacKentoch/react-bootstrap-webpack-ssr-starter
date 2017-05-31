@@ -13,11 +13,8 @@ const helmet      = require('helmet');
 // isomorphic:
 import React              from 'react';
 import { renderToString } from 'react-dom/server';
-import frontRoutes        from '../../../app/routes/Routes';
-import {
-  RouterContext,
-  match
-}                         from 'react-router';
+import { StaticRouter }   from 'react-router';
+import App                from '../../../app/containers/app/App';
 
 const DOCS_PATH = '../../../../docs';
 const PORT      = 8083;
@@ -81,33 +78,26 @@ module.exports = app; // export app just for testing purpose
 
 
 function serverRender(req, res) {
-  const routes    = frontRoutes(); 
   const location  = req.url;
+  const context   = {};
 
-  match(
-    { routes, location },
-    (err, redirectLocation, renderProps) => {
-      if (err) {
-        console.error(err);
-        return res.status(500).end('Internal server error');
-      }
-      // in case of redirect propagate the redirect to the browser
-      if (redirectLocation) {
-        return res.redirect(302, redirectLocation.pathname + redirectLocation.search);
-      }
-      if (!renderProps) {
-        return res.status(404).end('Not found');
-      }
-
-      const InitialView = (<RouterContext {...renderProps} />);
-      const html        = renderToString(InitialView);
-
-      return res
-        .status(200)
-        .set('content-type', 'text/html')
-        .send(renderFullPage(html));
-    }
+  const InitialView = (
+    <StaticRouter
+      location={location}
+      context={context}>
+      <App />
+    </StaticRouter>
   );
+
+  const html = renderToString(InitialView);
+  if (context.url) {
+    return res.status.end({ location: context.url });
+  }
+
+  return res
+    .status(200)
+    .set('content-type', 'text/html')
+    .send(renderFullPage(html));
 }
 
 function renderFullPage(html) {
